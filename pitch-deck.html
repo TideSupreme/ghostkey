@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GhostKey Pitch Deck</title>
+  <style>
+    :root { --ink:#101820; --cream:#F6F3EC; --mint:#35D3A6; --gold:#FFB347; --muted:#5C6673; --line:#E2DCCE; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #0b1118; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); }
+    .slide { width: 1280px; height: 720px; margin: 24px auto; border-radius: 28px; overflow: hidden; background: var(--cream); position: relative; box-shadow: 0 30px 90px rgba(0,0,0,.35); padding: 54px; }
+    .dark { background: radial-gradient(circle at top left, rgba(53,211,166,.25), transparent 35%), linear-gradient(135deg, #101820, #172331); color: var(--cream); }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:-.03em; }
+    .mark { width:46px; height:46px; border-radius:14px; background:var(--mint); color:var(--ink); display:grid; place-items:center; font-weight:950; }
+    .eyebrow { display:inline-flex; padding:8px 12px; border-radius:999px; background:#E9FBF5; color:#0D8D67; font-size:13px; font-weight:850; border:1px solid #BCEFDA; }
+    .dark .eyebrow { background:rgba(53,211,166,.12); border-color:rgba(53,211,166,.35); color:var(--mint); }
+    h1 { font-size:60px; line-height:1.02; letter-spacing:-.06em; margin:26px 0 18px; max-width:900px; }
+    h2 { font-size:38px; line-height:1.06; letter-spacing:-.05em; margin:12px 0; }
+    p, li { font-size:21px; line-height:1.45; color:var(--muted); }
+    .dark p, .dark li { color:#C8D0DA; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:28px; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:24px; padding:26px; box-shadow:0 18px 45px rgba(16,24,32,.08); }
+    .metric { background:#101820; color:var(--cream); border-radius:22px; padding:24px; }
+    .metric strong { display:block; font-size:46px; color:var(--gold); letter-spacing:-.05em; }
+    .screen { background:#fff; border:1px solid var(--line); border-radius:28px; padding:18px; box-shadow:0 24px 70px rgba(16,24,32,.20); }
+    .topbar { display:flex; gap:7px; padding:4px 0 16px; }
+    .dot { width:10px; height:10px; border-radius:50%; background:#D8DEE6; }
+    .appnav { display:flex; justify-content:space-between; align-items:center; padding:10px 0 26px; font-weight:900; }
+    .chip { display:inline-flex; padding:7px 11px; border-radius:999px; background:#E9FBF5; color:#0D8D67; font-size:12px; font-weight:850; }
+    .button { display:inline-flex; border-radius:14px; padding:14px 18px; background:var(--ink); color:var(--cream); font-size:15px; font-weight:900; }
+    .timeline { display:grid; gap:10px; margin-top:16px; }
+    .ok { background:#E9FBF5; color:#0D8D67; border-radius:12px; padding:11px 12px; font-weight:850; }
+    .deny { background:#FFF1F0; color:#B42318; border-radius:12px; padding:11px 12px; font-weight:850; }
+    .cipher { background:#101820; color:#A8B3C2; border-radius:14px; padding:14px; font-size:13px; overflow-wrap:anywhere; }
+    .ask { position:absolute; bottom:54px; left:54px; right:54px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; }
+  </style>
+</head>
+<body>
+  <section class="slide dark">
+    <div class="brand"><div class="mark">GK</div>GhostKey</div>
+    <div class="eyebrow" style="margin-top:86px">One task, not your identity</div>
+    <h1>Let AI agents act once without ever becoming you.</h1>
+    <p style="max-width:780px">A mission-control layer for scoped, single-use authority — no OAuth refresh tokens, API keys, or reusable browser cookies handed to the model.</p>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">The pain</div>
+    <h1>Agent power is still credential sprawl.</h1>
+    <div class="grid">
+      <div class="card"><h2>Security teams say no</h2><p>One prompt injection can turn a broad app token into an insider with durable authority.</p></div>
+      <div class="card"><h2>Builders over-scope</h2><p>Refund bots, travel bots, CRM bots, and Slack automations inherit more identity than the job requires.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">What we built</div>
+    <h1>GhostKey creates a disposable mission.</h1>
+    <div class="grid">
+      <div class="metric"><strong>1x</strong><p>maximum allowed spend per mission</p></div>
+      <div class="metric"><strong>0</strong><p>reusable secrets exposed to the agent</p></div>
+    </div>
+    <p style="max-width:930px">The user defines action, boundary, and time box. The app seals it, records the first spend, and visibly rejects replay.</p>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Real screen: login cover</div>
+    <div class="screen" style="margin-top:18px; height:550px; background:linear-gradient(135deg,#101820 0%,#172331 48%,#F6F3EC 48%); color:#F6F3EC">
+      <div class="appnav"><span><span class="mark" style="display:inline-grid; width:40px; height:40px; margin-right:10px">GK</span>GhostKey</span></div>
+      <div style="display:grid; grid-template-columns:1fr 440px; gap:34px; align-items:center">
+        <div><span class="chip" style="background:rgba(53,211,166,.14); color:#35D3A6">Credential-free agent delegation</span><h2 style="font-size:48px; color:#F6F3EC">Let an AI agent act once — without ever becoming you.</h2><p>Create a time-boxed mission, seal sensitive instructions with Tide, spend authority once, and watch replay fail.</p><span class="button" style="background:#FFB347; color:#101820">Continue with Tide</span></div>
+        <div class="card"><span class="chip">live mission</span><h2>Refund order #A-1042 up to $50</h2><div class="timeline"><div class="ok">✓ Mission created by human</div><div class="ok">✓ Agent spent authority once</div><div class="deny">✕ Replay attempt rejected</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Real screen: mission flow</div>
+    <div class="screen" style="margin-top:18px; height:550px">
+      <div class="appnav"><span><span class="mark" style="display:inline-grid; width:38px; height:38px; margin-right:10px">GK</span>GhostKey</span><span>Missions · Proof</span></div>
+      <div style="display:grid; grid-template-columns:390px 1fr; gap:22px">
+        <div class="card"><b>Agent name</b><p style="font-size:16px">Ops Copilot</p><b>Exact action</b><p style="font-size:16px">Refund order A-1042 for support escalation</p><span class="button">Create GhostKey</span></div>
+        <div class="card"><div class="ok">✓ Mission GK-LIVE sealed client-side and spent once.</div><h2>Refund order A-1042</h2><p>Ops Copilot can act within <b>$50 maximum refund</b> for <b>15 minutes</b>.</p><div class="cipher">ciphertext preview: ewogICJpZCI6ICJHSy1MSVZFIi...</div><div class="timeline"><div class="ok">✓ Agent spent receipt doken-demo:GK-LIVE</div><div class="deny">✕ Replay rejected: capability already consumed</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Tide edge</div>
+    <h1>Why Tide makes this defensible.</h1>
+    <ul style="max-width:1000px">
+      <li><b>TideCloak OIDC</b> proves the human session without custom passwords.</li>
+      <li><b>Self-encryption</b> means mission text is sealed client-side; the server stores ciphertext.</li>
+      <li><b>Doken/Forseti direction</b> turns the demo receipt into cryptographic, policy-bound delegated authority.</li>
+    </ul>
+  </section>
+
+  <section class="slide dark">
+    <div class="eyebrow">The ask</div>
+    <h1>Fund the end of agent credential sprawl.</h1>
+    <p style="max-width:840px">Every enterprise buying AI agents needs a safer answer than “give the bot a token.” GhostKey sells the missing primitive: lend a task, not an identity.</p>
+    <div class="ask"><div class="card"><h2>Buyers</h2><p>Security, IT, platform engineering</p></div><div class="card"><h2>Why now</h2><p>Operator-style agents are entering production</p></div><div class="card"><h2>Vote</h2><p>Back GhostKey for Tide-powered delegation</p></div></div>
+  </section>
+</body>
+</html>
